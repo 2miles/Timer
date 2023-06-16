@@ -1,1 +1,1 @@
-# Stopwatch application written in React
+# Stopwatch application

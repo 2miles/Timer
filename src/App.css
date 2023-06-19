@@ -63,8 +63,8 @@
 }
 
 .button {
-  background-color: #555555; /* Green */
-  border-color: black; /* Green */
+  background-color: #555555;
+  border-color: black;
   border: solid 2px black;
   border-radius: 5px;
   color: white;
@@ -72,15 +72,35 @@
   margin-left: 5px;
   margin-right: 5px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 20px;
 }
 
 .button-stop {
   background-color: #961a1a;
 }
+.button-stop:hover {
+  background-color: #a72b2b;
+}
+.button-stop:active {
+  background-color: #740909;
+}
 
 .button-start {
   background-color: #1a9620;
+}
+.button-start:hover {
+  background-color: #2ba731;
+}
+.button-start:active {
+  background-color: #097400;
+}
+
+.button-reset {
+  background-color: #555555;
+}
+.button-reset:hover {
+  background-color: #666666;
+}
+.button-reset:active {
+  background-color: #444444;
 }

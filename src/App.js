@@ -24,26 +24,33 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Timer App</h1>
-        <div>
-          <span style={{ display: 'inline-block', width: '40px' }}>
-            {displayHours(time)}
-          </span>
-          {':'}
-          <span style={{ display: 'inline-block', width: '40px' }}>
-            {displayMinutes(time)}
-          </span>
-          {':'}
-          <span style={{ display: 'inline-block', width: '40px' }}>
-            {displaySeconds(time)}
-          </span>
-        </div>
-        <div>
-          <button onClick={() => setIsOn(true)}>Start</button>
-          <button onClick={() => setIsOn(false)}>Stop</button>
-          <button onClick={() => setIsOn(true)}>Resume</button>
-          <button onClick={() => setTime(0)}>Reset</button>
-        </div>
       </header>
+      <body className="App-body">
+        <div className="stopwatch">
+          <div className="stopwatch-display">
+            <span>{displayHours(time)}</span>:
+            <span>{displayMinutes(time)}</span>:
+            <span>{displaySeconds(time)}</span>
+          </div>
+          <div className="stopwatch-button-area">
+            <button
+              className="button button-start"
+              onClick={() => setIsOn(true)}
+            >
+              Start
+            </button>
+            <button
+              className="button button-stop"
+              onClick={() => setIsOn(false)}
+            >
+              Stop
+            </button>
+            <button className="button" onClick={() => setTime(0)}>
+              Reset
+            </button>
+          </div>
+        </div>
+      </body>
     </div>
   );
 }

@@ -45,7 +45,13 @@ function App() {
             >
               Stop
             </button>
-            <button className="button" onClick={() => setTime(0)}>
+            <button
+              className="button button-reset"
+              onClick={() => {
+                setTime(0);
+                setIsOn(false);
+              }}
+            >
               Reset
             </button>
           </div>

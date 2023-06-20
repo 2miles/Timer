@@ -15,8 +15,8 @@ function App() {
     } else {
       clearInterval(interval);
     }
-    // Cleanup function for when the component gets unmounted to clear the interval
-    // Will stop the interval when the user leaves the page
+    // Cleanup function for when the component gets unmounted to clear the interval.
+    // Will stop the interval when the user leaves the page.
     return () => clearInterval(interval);
   }, [isOn]);
 
@@ -27,26 +27,26 @@ function App() {
       </header>
       <body className="App-body">
         <div className="stopwatch">
-          <div className="stopwatch-display">
+          <div className="stopwatch stopwatch-display">
             <span>{displayHours(time)}</span>:
             <span>{displayMinutes(time)}</span>:
             <span>{displaySeconds(time)}</span>
           </div>
-          <div className="stopwatch-button-area">
+          <div className="stopwatch stopwatch-button-area">
             <button
-              className="button button-start"
+              className="stopwatch button button-start"
               onClick={() => setIsOn(true)}
             >
               Start
             </button>
             <button
-              className="button button-stop"
+              className="stopwatch button button-stop"
               onClick={() => setIsOn(false)}
             >
               Stop
             </button>
             <button
-              className="button button-reset"
+              className="stopwatch button button-reset"
               onClick={() => {
                 setTime(0);
                 setIsOn(false);

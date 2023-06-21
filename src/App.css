@@ -1,5 +1,19 @@
-@import '../vars.css';
+@import './vars.css';
 
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: var(--app-bg);
+}
+
+.App-body {
+  background-color: var(--app-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(20px + 2vmin);
+  color: white;
+}
 .stopwatch {
   display: flex;
   flex-direction: column;
@@ -11,7 +25,7 @@
   border-radius: 5px;
 }
 
-.stopwatchDisplay {
+.stopwatch-display {
   flex-direction: row;
   font-family: 'Menlo';
   max-width: 230px;
@@ -22,7 +36,7 @@
   border: solid 4px var(--sw-display-border);
 }
 
-.stopwatchBtnArea {
+.stopwatch-btn-area {
   flex-direction: row;
   background-color: var(--sw-bg);
   border: none;
@@ -37,32 +51,32 @@
   font-size: 20px;
 }
 
-.btnStop {
+.btn-stop {
   background-color: var(--sw-btn-stop);
 }
-.btnStop:hover {
+.btn-stop:hover {
   background-color: var(--sw-btn-stop-hover);
 }
-.btnStop:active {
+.btn-stop:active {
   background-color: var(--sw-btn-stop-pressed);
 }
 
-.btnStart {
+.btn-start {
   background-color: var(--sw-btn-start);
 }
-.btnStart:hover {
+.btn-start:hover {
   background-color: var(--sw-btn-start-hover);
 }
-.btnStart:active {
+.btn-start:active {
   background-color: var(--sw-btn-start-pressed);
 }
 
-.btnReset {
+.btn-reset {
   background-color: var(--sw-btn-reset);
 }
-.btnReset:hover {
+.btn-reset:hover {
   background-color: var(--sw-btn-reset-hover);
 }
-.btnReset:active {
+.btn-reset:active {
   background-color: var(--sw-btn-reset-pressed);
 }

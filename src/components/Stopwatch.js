@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { displayHours, displayMinutes, displaySeconds } from '../utils';
-import styles from './Stopwatch.module.css';
-import classnames from 'classnames';
+import '../App.css';
 
-function Stopwatch() {
+function Stopwatch({ timer }) {
+  const title = timer.title;
   const [time, setTime] = useState(0);
   const [isOn, setIsOn] = useState(false);
 
@@ -22,26 +22,27 @@ function Stopwatch() {
   }, [isOn]);
 
   return (
-    <div className={styles.stopwatch}>
-      <div className={classnames(styles.stopwatch, styles.stopwatchDisplay)}>
+    <div className="stopwatch">
+      {title}
+      <div className="stopwatch stopwatch-display">
         <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
         <span>{displaySeconds(time)}</span>
       </div>
-      <div className={classnames(styles.stopwatch, styles.stopwatchBtnArea)}>
+      <div className="stopwatch stopwatch-btn-area">
         <button
-          className={classnames(styles.stopwatch, styles.btn, styles.btnStart)}
+          className="stopwatch btn btn-start"
           onClick={() => setIsOn(true)}
         >
           Start
         </button>
         <button
-          className={classnames(styles.stopwatch, styles.btn, styles.btnStop)}
+          className="stopwatch btn btn-stop"
           onClick={() => setIsOn(false)}
         >
           Stop
         </button>
         <button
-          className={classnames(styles.stopwatch, styles.btn, styles.btnReset)}
+          className="stopwatch btn btn-reset"
           onClick={() => {
             setTime(0);
             setIsOn(false);

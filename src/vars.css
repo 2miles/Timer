@@ -1,0 +1,17 @@
+:root {
+  --app-bg: #393d45;
+  --sw-bg: #222222;
+  --sw-display-bg: #9aada3;
+  --sw-display-fg: black;
+  --sw-display-border: black;
+  --sw-btn-text: #eeeeee;
+  --sw-btn-stop: #961a1a;
+  --sw-btn-stop-hover: #a72b2b;
+  --sw-btn-stop-pressed: #740909;
+  --sw-btn-start: #1a9620;
+  --sw-btn-start-hover: #2ba731;
+  --sw-btn-start-pressed: #097400;
+  --sw-btn-reset: #555555;
+  --sw-btn-reset-hover: #666666;
+  --sw-btn-reset-pressed: #444444;
+}

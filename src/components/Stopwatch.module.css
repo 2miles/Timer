@@ -1,0 +1,68 @@
+@import '../vars.css';
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sw-bg);
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-width: 3px;
+  border-radius: 5px;
+}
+
+.stopwatchDisplay {
+  flex-direction: row;
+  font-family: 'Menlo';
+  max-width: 230px;
+  margin-top: 20px;
+  padding: 0px 5px;
+  background-color: var(--sw-display-bg);
+  color: var(--sw-display-fg);
+  border: solid 4px var(--sw-display-border);
+}
+
+.stopwatchBtnArea {
+  flex-direction: row;
+  background-color: var(--sw-bg);
+  border: none;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border-width: 2px;
+  color: var(--btn-text);
+  margin: 5px 5px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.btnStop {
+  background-color: var(--sw-btn-stop);
+}
+.btnStop:hover {
+  background-color: var(--sw-btn-stop-hover);
+}
+.btnStop:active {
+  background-color: var(--sw-btn-stop-pressed);
+}
+
+.btnStart {
+  background-color: var(--sw-btn-start);
+}
+.btnStart:hover {
+  background-color: var(--sw-btn-start-hover);
+}
+.btnStart:active {
+  background-color: var(--sw-btn-start-pressed);
+}
+
+.btnReset {
+  background-color: var(--sw-btn-reset);
+}
+.btnReset:hover {
+  background-color: var(--sw-btn-reset-hover);
+}
+.btnReset:active {
+  background-color: var(--sw-btn-reset-pressed);
+}

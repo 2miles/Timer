@@ -4,7 +4,23 @@ import '../App.css';
 
 function Stopwatch() {
   const [time, setTime] = useState(0);
+  const [lastTime, setLastTime] = useState(0);
+  const [laps, setLaps] = useState([]);
   const [isOn, setIsOn] = useState(false);
+
+  const handleLap = () => {
+    setLaps((prevList) => {
+      return [...prevList, time - lastTime];
+    });
+    setLastTime(time);
+  };
+
+  const handleReset = () => {
+    setTime(0);
+    setIsOn(false);
+    setLastTime(0);
+    setLaps(() => []);
+  };
 
   useEffect(() => {
     let interval = null;
@@ -28,10 +44,7 @@ function Stopwatch() {
       </div>
       <div className="stopwatch stopwatch-btn-area">
         {isOn ? (
-          <button
-            className="stopwatch btn btn-start"
-            onClick={() => setIsOn(true)}
-          >
+          <button className="stopwatch btn btn-start" onClick={handleLap}>
             Lap
           </button>
         ) : (
@@ -50,17 +63,12 @@ function Stopwatch() {
             Stop
           </button>
         ) : (
-          <button
-            className="stopwatch btn btn-reset"
-            onClick={() => {
-              setTime(0);
-              setIsOn(false);
-            }}
-          >
+          <button className="stopwatch btn btn-reset" onClick={handleReset}>
             Reset
           </button>
         )}
       </div>
+      <>{laps[laps.length - 1]}</>
     </div>
   );
 }

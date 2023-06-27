@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { displayHours, displayMinutes, displaySeconds } from '../utils';
 import '../App.css';
 
-function Stopwatch({ timer }) {
-  const title = timer.title;
+function Stopwatch() {
   const [time, setTime] = useState(0);
   const [isOn, setIsOn] = useState(false);
 
@@ -23,7 +22,6 @@ function Stopwatch({ timer }) {
 
   return (
     <div className="stopwatch">
-      {title}
       <div className="stopwatch stopwatch-display">
         <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
         <span>{displaySeconds(time)}</span>

@@ -37,6 +37,10 @@ function Stopwatch() {
     setIsOn(true);
   };
 
+  const handlePause = () => {
+    setIsOn(false);
+  };
+
   useEffect(() => {
     let interval = null;
     if (isOn) {
@@ -70,12 +74,15 @@ function Stopwatch() {
             Start
           </button>
         )}
+        <button className="stopwatch btn btn-reset" onClick={handlePause}>
+          Pause
+        </button>
         {isOn ? (
           <button className="stopwatch btn btn-stop" onClick={handleStop}>
             Stop
           </button>
         ) : (
-          <button className="stopwatch btn btn-reset" onClick={handleReset}>
+          <button className="stopwatch btn btn-stop" onClick={handleReset}>
             Reset
           </button>
         )}

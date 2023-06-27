@@ -54,6 +54,7 @@
   border: solid 2px;
   border-color: black;
 }
+
 .lap {
   display: flex;
   flex-direction: row;
@@ -69,10 +70,12 @@
 }
 
 .btn {
-  border-width: 2px;
-  min-width: 150px;
+  border: none;
+  min-width: 120px;
+  min-height: 60px;
   color: var(--btn-text);
   margin: 5px 5px;
+  padding: 15px;
   text-align: center;
   font-size: 20px;
 }

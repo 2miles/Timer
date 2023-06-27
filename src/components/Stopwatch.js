@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { displayHours, displayMinutes, displaySeconds } from '../utils';
+import { displayMinutes, displaySeconds, displayMillis } from '../utils';
 import '../App.css';
 
 function Stopwatch() {
@@ -11,7 +11,7 @@ function Stopwatch() {
     if (isOn) {
       interval = setInterval(() => {
         setTime((prev) => prev + 1);
-      }, 1000);
+      }, 10);
     } else {
       clearInterval(interval);
     }
@@ -23,8 +23,8 @@ function Stopwatch() {
   return (
     <div className="stopwatch">
       <div className="stopwatch stopwatch-display">
-        <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
-        <span>{displaySeconds(time)}</span>
+        <span>{displayMinutes(time)}</span>:<span>{displaySeconds(time)}</span>:
+        <span>{displayMillis(time)}</span>
       </div>
       <div className="stopwatch stopwatch-btn-area">
         <button

@@ -27,27 +27,39 @@ function Stopwatch() {
         <span>{displayMillis(time)}</span>
       </div>
       <div className="stopwatch stopwatch-btn-area">
-        <button
-          className="stopwatch btn btn-start"
-          onClick={() => setIsOn(true)}
-        >
-          Start
-        </button>
-        <button
-          className="stopwatch btn btn-stop"
-          onClick={() => setIsOn(false)}
-        >
-          Stop
-        </button>
-        <button
-          className="stopwatch btn btn-reset"
-          onClick={() => {
-            setTime(0);
-            setIsOn(false);
-          }}
-        >
-          Reset
-        </button>
+        {isOn ? (
+          <button
+            className="stopwatch btn btn-start"
+            onClick={() => setIsOn(true)}
+          >
+            Lap
+          </button>
+        ) : (
+          <button
+            className="stopwatch btn btn-start"
+            onClick={() => setIsOn(true)}
+          >
+            Start
+          </button>
+        )}
+        {isOn ? (
+          <button
+            className="stopwatch btn btn-stop"
+            onClick={() => setIsOn(false)}
+          >
+            Stop
+          </button>
+        ) : (
+          <button
+            className="stopwatch btn btn-reset"
+            onClick={() => {
+              setTime(0);
+              setIsOn(false);
+            }}
+          >
+            Reset
+          </button>
+        )}
       </div>
     </div>
   );

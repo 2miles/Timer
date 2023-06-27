@@ -12,7 +12,7 @@ function Laps({ laps }) {
             </div>
             <div>
               <span>{displayMinutes(lap)}</span>:
-              <span>{displaySeconds(lap)}</span>:
+              <span>{displaySeconds(lap)}</span>.
               <span>{displayMillis(lap)}</span>
             </div>
           </div>

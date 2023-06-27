@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
-import { displayMinutes, displaySeconds, displayMillis } from '../utils';
+import {
+  displayMinutes,
+  displaySeconds,
+  displayMillis,
+  displayHours,
+} from '../utils';
 import '../App.css';
 import Laps from './Laps';
 
@@ -49,8 +54,11 @@ function Stopwatch() {
   return (
     <div className="stopwatch">
       <div className="stopwatch stopwatch-display">
-        <span>{displayMinutes(time)}</span>:<span>{displaySeconds(time)}</span>:
-        <span>{displayMillis(time)}</span>
+        <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
+        <span>{displaySeconds(time)}</span>
+        <span style={{ fontSize: '2.2rem', alignSelf: 'flex-end' }}>
+          .{displayMillis(time)}
+        </span>
       </div>
       <div className="stopwatch stopwatch-btn-area">
         {isOn ? (

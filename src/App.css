@@ -23,12 +23,13 @@
   margin-top: 10px;
   border-width: 3px;
   border-radius: 5px;
+  min-width: 400px;
 }
 
 .stopwatch-display {
   flex-direction: row;
   font-family: 'Menlo';
-  max-width: 230px;
+  min-width: 230px;
   margin-top: 20px;
   padding: 0px 5px;
   background-color: var(--sw-display-bg);
@@ -38,6 +39,7 @@
 
 .stopwatch-btn-area {
   flex-direction: row;
+  justify-content: space-around;
   background-color: var(--sw-bg);
   border: none;
   margin-bottom: 20px;
@@ -63,12 +65,12 @@
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: var(--sw-lap-bg);
-  min-width: 180px;
+  min-width: 260px;
 }
 
 .btn {
   border-width: 2px;
-  min-width: 75px;
+  min-width: 150px;
   color: var(--btn-text);
   margin: 5px 5px;
   text-align: center;

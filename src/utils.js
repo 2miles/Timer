@@ -27,3 +27,13 @@ export function displayMinutes(interval) {
   if (minutes >= 10) return minutes.toString();
   else return `${0}${minutes.toString()}`;
 }
+
+/**
+ * Takes an interval of milliseconds and returns a string representing the
+ * minutes component as a stopwatch would display it.
+ */
+export function displayHours(interval) {
+  let hours = Math.floor(interval / 100 / 60 / 60) % 60;
+  if (hours >= 10) return hours.toString();
+  else return `${0}${hours.toString()}`;
+}

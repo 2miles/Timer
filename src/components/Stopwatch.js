@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { displayMinutes, displaySeconds, displayMillis } from '../utils';
 import '../App.css';
+import Laps from './Laps';
 
 function Stopwatch() {
   const [time, setTime] = useState(0);
@@ -68,7 +69,7 @@ function Stopwatch() {
           </button>
         )}
       </div>
-      <>{laps[laps.length - 1]}</>
+      <Laps laps={laps} />
     </div>
   );
 }

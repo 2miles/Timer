@@ -23,6 +23,15 @@ function Stopwatch() {
     setLaps(() => []);
   };
 
+  const handleStop = () => {
+    setIsOn(false);
+    handleLap();
+  };
+
+  const handleStart = () => {
+    setIsOn(true);
+  };
+
   useEffect(() => {
     let interval = null;
     if (isOn) {
@@ -49,18 +58,12 @@ function Stopwatch() {
             Lap
           </button>
         ) : (
-          <button
-            className="stopwatch btn btn-start"
-            onClick={() => setIsOn(true)}
-          >
+          <button className="stopwatch btn btn-start" onClick={handleStart}>
             Start
           </button>
         )}
         {isOn ? (
-          <button
-            className="stopwatch btn btn-stop"
-            onClick={() => setIsOn(false)}
-          >
+          <button className="stopwatch btn btn-stop" onClick={handleStop}>
             Stop
           </button>
         ) : (
@@ -69,7 +72,7 @@ function Stopwatch() {
           </button>
         )}
       </div>
-      <Laps laps={laps} />
+      {laps.length > 0 && <Laps laps={laps} />}
     </div>
   );
 }

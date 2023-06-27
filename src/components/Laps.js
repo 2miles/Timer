@@ -6,11 +6,11 @@ function Laps({ laps }) {
     <div className="laps-area">
       {laps.map((lap, key) => {
         return (
-          <div className="laps-area lap">
-            <div className="laps-area lap lap-title">
+          <div className="lap">
+            <div className="lap-title">
               <span>{`Lap ${key + 1}`}</span>
             </div>
-            <div className="laps-area lap lap-number">
+            <div>
               <span>{displayMinutes(lap)}</span>:
               <span>{displaySeconds(lap)}</span>:
               <span>{displayMillis(lap)}</span>

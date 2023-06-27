@@ -1,30 +1,30 @@
 import { useEffect, useState } from 'react';
-import {
-  displayMinutes,
-  displaySeconds,
-  displayMillis,
-  displayHours,
-} from '../utils';
 import '../App.css';
 import Laps from './Laps';
+import Display from './Display';
 
 function Stopwatch() {
   const [time, setTime] = useState(0);
   const [lastTime, setLastTime] = useState(0);
   const [laps, setLaps] = useState([]);
+  const [totals, setTotals] = useState([]);
   const [isOn, setIsOn] = useState(false);
 
   const handleLap = () => {
     setLaps((prevList) => {
       return [...prevList, time - lastTime];
     });
+    setTotals((prevList) => {
+      return [...prevList, time];
+    });
     setLastTime(time);
   };
 
   const handleReset = () => {
-    setTime(0);
     setIsOn(false);
+    setTime(0);
     setLastTime(0);
+    setTotals(() => []);
     setLaps(() => []);
   };
 
@@ -57,13 +57,8 @@ function Stopwatch() {
 
   return (
     <div className="stopwatch">
-      <div className="stopwatch stopwatch-display">
-        <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
-        <span>{displaySeconds(time)}</span>
-        <span style={{ fontSize: '2.2rem', alignSelf: 'flex-end' }}>
-          .{displayMillis(time)}
-        </span>
-      </div>
+      <Display time={time} title={'Total'} />
+      <Display time={time - lastTime} title={'Lap'} />
       <div className="stopwatch stopwatch-btn-area">
         {isOn ? (
           <button className="stopwatch btn btn-start" onClick={handleLap}>
@@ -87,7 +82,7 @@ function Stopwatch() {
           </button>
         )}
       </div>
-      {laps.length > 0 && <Laps laps={laps} />}
+      {laps.length > 0 && <Laps laps={laps} totals={totals} />}
     </div>
   );
 }

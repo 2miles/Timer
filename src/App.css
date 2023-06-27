@@ -1,18 +1,13 @@
 @import './vars.css';
 
 .App {
+  display: flex;
   text-align: center;
   min-height: 100vh;
   background-color: var(--app-bg);
-}
-
-.App-body {
-  background-color: var(--app-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(20px + 2vmin);
   color: white;
+  align-items: center;
+  flex-direction: column;
 }
 .stopwatch {
   display: flex;
@@ -23,15 +18,35 @@
   margin-top: 10px;
   border-width: 3px;
   border-radius: 5px;
-  min-width: 400px;
+  min-width: 500px;
 }
 
+.stopwatch-display-area {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Monaco';
+  min-width: 230px;
+  margin-top: 10px;
+  padding: 0px 0px;
+  background-color: var(--sw-bg);
+  color: lightblue;
+  border: none;
+}
+.stopwatch-display-title {
+  padding: 0px;
+  margin: 0px 0px;
+  width: fit-content;
+  min-width: 50px;
+  align-content: start;
+  text-align: left;
+}
 .stopwatch-display {
   flex-direction: row;
   font-family: 'Menlo';
+  font-size: 50px;
   min-width: 230px;
-  margin-top: 20px;
   padding: 0px 5px;
+  margin-top: 0px;
   background-color: var(--sw-display-bg);
   color: var(--sw-display-fg);
   border: solid 4px var(--sw-display-border);
@@ -51,27 +66,33 @@
   font-family: 'Menlo';
   font-size: 18px;
   margin-bottom: 10px;
-  border: solid 2px;
-  border-color: black;
+}
+
+.laps-header {
+  font-size: 0.9rem;
+  font-family: 'Monaco';
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: lightblue;
 }
 
 .lap {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: solid 1px;
-  border-color: black;
+  border-bottom: solid 2px;
+  border-color: var(--sw-btn-reset-pressed);
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: var(--sw-lap-bg);
-  min-width: 260px;
+  min-width: 380px;
 }
 
 .btn {
   border: none;
-  min-width: 120px;
+  min-width: 150px;
   min-height: 60px;
   color: var(--btn-text);
   margin: 5px 5px;

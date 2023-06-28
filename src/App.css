@@ -102,6 +102,9 @@
   justify-content: end;
   min-width: 20px;
 }
+.lap-placeholder {
+  color: var(--btn-reset);
+}
 
 .best-lap-time {
   border: solid 1px;

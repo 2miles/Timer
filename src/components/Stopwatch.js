@@ -82,7 +82,8 @@ function Stopwatch() {
           </button>
         )}
       </div>
-      {laps.length > 0 && <Laps laps={laps} totals={totals} />}
+      {/* {laps.length > 0 && <Laps laps={laps} totals={totals} />} */}
+      <Laps laps={laps} totals={totals} />
     </div>
   );
 }

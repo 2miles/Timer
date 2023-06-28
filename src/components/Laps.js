@@ -24,6 +24,27 @@ function Laps({ laps, totals }) {
         <div>Lap Time</div>
         <div>Total Time</div>
       </div>
+      {laps.length === 0 && (
+        <div className="lap lap-placeholder">
+          <div className="lap-title">
+            <span>0</span>
+          </div>
+          <div>
+            <span>{displayHours(0)}</span>:<span>{displayMinutes(0)}</span>:
+            <span>{displaySeconds(0)}</span>.
+            <span style={{ fontSize: '.9rem', alignSelf: 'flex-end' }}>
+              {displayMillis(0)}
+            </span>
+          </div>
+          <div>
+            <span>{displayHours(0)}</span>:<span>{displayMinutes(0)}</span>:
+            <span>{displaySeconds(0)}</span>.
+            <span style={{ fontSize: '.9rem', alignSelf: 'flex-end' }}>
+              {displayMillis(0)}
+            </span>
+          </div>
+        </div>
+      )}
       {laps.map((lap, index) => {
         index === bestLap(laps) && laps.length > 1
           ? (lapClassName = 'best-lap-time')

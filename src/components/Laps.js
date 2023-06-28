@@ -10,8 +10,8 @@ function Laps({ laps, totals }) {
     return laps.indexOf(Math.max(...laps));
   };
 
-  let lapClassName = '';
-  let placeholderClassName = 'lap';
+  let lapStyle = '';
+  let shadeStyle = 'lap';
 
   return (
     <div className="laps-area">
@@ -24,23 +24,23 @@ function Laps({ laps, totals }) {
         <Lap
           lap={[0]}
           totals={[0]}
-          lapClassName={lapClassName}
-          placeholderClassName={'lap lap-placeholder'}
+          lapStyle={lapStyle}
+          shadeStyle={'lap lap-placeholder'}
           index={0}
         />
       )}
       {laps.map((lap, index) => {
         index === bestLap(laps) && laps.length > 1
-          ? (lapClassName = 'best-lap-time')
+          ? (lapStyle = 'best-lap-time')
           : index === worstLap(laps) && laps.length > 1
-          ? (lapClassName = 'worst-lap-time')
-          : (lapClassName = '');
+          ? (lapStyle = 'worst-lap-time')
+          : (lapStyle = '');
         return (
           <Lap
             lap={lap}
             totals={totals}
-            lapClassName={lapClassName}
-            placeholderClassName={placeholderClassName}
+            lapStyle={lapStyle}
+            shadeStyle={shadeStyle}
             index={index}
           />
         );

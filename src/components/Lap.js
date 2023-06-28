@@ -6,16 +6,16 @@ import {
   displayHours,
 } from '../utils';
 
-function Lap({ lap, totals, lapClassName, placeholderClassName, index }) {
+function Lap({ lap, totals, lapStyle, shadeStyle, index }) {
   return (
-    <div className={placeholderClassName}>
+    <div className={shadeStyle}>
       <div className="lap-title">
         <span>{`${index + 1}`}</span>
       </div>
-      <div className={lapClassName}>
+      <div className={lapStyle}>
         <span>{displayHours(lap)}</span>:<span>{displayMinutes(lap)}</span>:
         <span>{displaySeconds(lap)}</span>.
-        <span style={{ fontSize: '.9rem', alignSelf: 'flex-end' }}>
+        <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
           {displayMillis(lap)}
         </span>
       </div>
@@ -23,7 +23,7 @@ function Lap({ lap, totals, lapClassName, placeholderClassName, index }) {
         <span>{displayHours(totals[index])}</span>:
         <span>{displayMinutes(totals[index])}</span>:
         <span>{displaySeconds(totals[index])}</span>.
-        <span style={{ fontSize: '.9rem', alignSelf: 'flex-end' }}>
+        <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
           {displayMillis(totals[index])}
         </span>
       </div>

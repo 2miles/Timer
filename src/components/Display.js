@@ -13,7 +13,7 @@ function Display({ time, title }) {
       <div className="stopwatch stopwatch-display">
         <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
         <span>{displaySeconds(time)}</span>
-        <span style={{ fontSize: '2.2rem', alignSelf: 'flex-end' }}>
+        <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
           .{displayMillis(time)}
         </span>
       </div>

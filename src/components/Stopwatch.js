@@ -59,25 +59,25 @@ function Stopwatch() {
     <div className="stopwatch">
       <Display time={time} title={'Total'} />
       <Display time={time - lastTime} title={'Lap'} />
-      <div className="stopwatch stopwatch-btn-area">
+      <div className="stopwatch-btn-area">
         {isOn ? (
-          <button className="stopwatch btn btn-start" onClick={handleLap}>
+          <button className="btn btn-start" onClick={handleLap}>
             Lap
           </button>
         ) : (
-          <button className="stopwatch btn btn-start" onClick={handleStart}>
+          <button className="btn btn-start" onClick={handleStart}>
             Start
           </button>
         )}
-        <button className="stopwatch btn btn-reset" onClick={handlePause}>
+        <button className="btn btn-reset" onClick={handlePause}>
           Pause
         </button>
         {isOn ? (
-          <button className="stopwatch btn btn-stop" onClick={handleStop}>
+          <button className="btn btn-stop" onClick={handleStop}>
             Stop
           </button>
         ) : (
-          <button className="stopwatch btn btn-stop" onClick={handleReset}>
+          <button className="btn btn-stop" onClick={handleReset}>
             Reset
           </button>
         )}

@@ -2,12 +2,13 @@
 
 .App {
   display: flex;
+  flex-direction: column;
   text-align: center;
   min-height: 100vh;
-  background-color: var(--app-bg);
+  /* background-color: var(--app-bg); */
+  background-color: var(--sw-bg);
   color: white;
   align-items: center;
-  flex-direction: column;
 }
 .stopwatch {
   display: flex;
@@ -15,8 +16,10 @@
   align-items: center;
   background-color: var(--sw-bg);
   padding: 5px 10px;
-  margin-top: 10px;
-  border-width: 3px;
+  margin-top: 50px;
+  border: solid;
+  border-color: rgb(200, 200, 30);
+  border-width: 1px;
   border-radius: 5px;
   min-width: 500px;
 }
@@ -29,7 +32,7 @@
   margin-top: 10px;
   padding: 0px 0px;
   background-color: var(--sw-bg);
-  color: lightblue;
+  color: rgb(200, 200, 30);
   border: none;
 }
 .stopwatch-display-title {
@@ -47,17 +50,18 @@
   min-width: 230px;
   padding: 0px 5px;
   margin-top: 0px;
-  background-color: var(--sw-display-bg);
-  color: var(--sw-display-fg);
-  border: solid 4px var(--sw-display-border);
+  background-color: var(--display-bg);
+  color: var(--display-fg);
+  border: solid 4px var(--display-border);
 }
 
 .stopwatch-btn-area {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: var(--sw-bg);
-  border: none;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .laps-area {
@@ -70,11 +74,14 @@
 
 .laps-header {
   font-size: 0.9rem;
+  padding-left: 5px;
+  padding-right: 25px;
+  margin-bottom: 10px;
   font-family: 'Monaco';
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: lightblue;
+  color: rgb(200, 200, 30);
 }
 
 .lap {
@@ -82,7 +89,7 @@
   flex-direction: row;
   justify-content: space-between;
   border-bottom: solid 2px;
-  border-color: var(--sw-btn-reset-pressed);
+  border-color: var(--btn-reset-pressed);
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 5px;
@@ -92,6 +99,7 @@
 
 .btn {
   border: none;
+  border-radius: 5px;
   min-width: 150px;
   min-height: 60px;
   color: var(--btn-text);
@@ -102,31 +110,31 @@
 }
 
 .btn-stop {
-  background-color: var(--sw-btn-stop);
+  background-color: var(--btn-stop);
 }
 .btn-stop:hover {
-  background-color: var(--sw-btn-stop-hover);
+  background-color: var(--btn-stop-hover);
 }
 .btn-stop:active {
-  background-color: var(--sw-btn-stop-pressed);
+  background-color: var(--btn-stop-pressed);
 }
 
 .btn-start {
-  background-color: var(--sw-btn-start);
+  background-color: var(--btn-start);
 }
 .btn-start:hover {
-  background-color: var(--sw-btn-start-hover);
+  background-color: var(--btn-start-hover);
 }
 .btn-start:active {
-  background-color: var(--sw-btn-start-pressed);
+  background-color: var(--btn-start-pressed);
 }
 
 .btn-reset {
-  background-color: var(--sw-btn-reset);
+  background-color: var(--btn-reset);
 }
 .btn-reset:hover {
-  background-color: var(--sw-btn-reset-hover);
+  background-color: var(--btn-reset-hover);
 }
 .btn-reset:active {
-  background-color: var(--sw-btn-reset-pressed);
+  background-color: var(--btn-reset-pressed);
 }

@@ -74,8 +74,8 @@
 
 .laps-header {
   font-size: 0.9rem;
-  padding-left: 5px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 35px;
   margin-bottom: 10px;
   font-family: 'Monaco';
   display: flex;
@@ -95,6 +95,27 @@
   padding-top: 5px;
   padding-bottom: 5px;
   min-width: 380px;
+}
+.lap-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  min-width: 20px;
+}
+
+.best-lap-time {
+  border: solid 1px;
+  border-radius: 5px;
+  border-color: var(--btn-start);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.worst-lap-time {
+  border: solid 1px;
+  border-radius: 5px;
+  border-color: var(--btn-stop);
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .btn {

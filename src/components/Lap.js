@@ -1,10 +1,5 @@
 import '../App.css';
-import {
-  displayMinutes,
-  displaySeconds,
-  displayMillis,
-  displayHours,
-} from '../utils';
+import Time from './Time';
 
 function Lap({ lap, totals, lapStyle, shadeStyle, index }) {
   return (
@@ -13,19 +8,10 @@ function Lap({ lap, totals, lapStyle, shadeStyle, index }) {
         <span>{`${index + 1}`}</span>
       </div>
       <div className={lapStyle}>
-        <span>{displayHours(lap)}</span>:<span>{displayMinutes(lap)}</span>:
-        <span>{displaySeconds(lap)}</span>.
-        <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
-          {displayMillis(lap)}
-        </span>
+        <Time time={lap} />
       </div>
       <div>
-        <span>{displayHours(totals[index])}</span>:
-        <span>{displayMinutes(totals[index])}</span>:
-        <span>{displaySeconds(totals[index])}</span>.
-        <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
-          {displayMillis(totals[index])}
-        </span>
+        <Time time={totals[index]} />
       </div>
     </div>
   );

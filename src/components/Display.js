@@ -1,9 +1,4 @@
-import {
-  displayMinutes,
-  displaySeconds,
-  displayMillis,
-  displayHours,
-} from '../utils';
+import Time from './Time';
 import '../App.css';
 
 function Display({ time, title }) {
@@ -11,11 +6,7 @@ function Display({ time, title }) {
     <div className="stopwatch-display-area">
       <div className="stopwatch-display-title">{title}</div>
       <div className="stopwatch stopwatch-display">
-        <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
-        <span>{displaySeconds(time)}</span>
-        <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
-          .{displayMillis(time)}
-        </span>
+        <Time time={time} />
       </div>
     </div>
   );

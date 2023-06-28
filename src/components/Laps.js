@@ -10,9 +10,6 @@ function Laps({ laps, totals }) {
     return laps.indexOf(Math.max(...laps));
   };
 
-  let lapStyle = '';
-  let shadeStyle = 'lap';
-
   return (
     <div className="laps-area">
       <div className="laps-header">
@@ -24,12 +21,13 @@ function Laps({ laps, totals }) {
         <Lap
           lap={[0]}
           totals={[0]}
-          lapStyle={lapStyle}
+          lapStyle={''}
           shadeStyle={'lap lap-placeholder'}
           index={0}
         />
       )}
       {laps.map((lap, index) => {
+        let lapStyle;
         index === bestLap(laps) && laps.length > 1
           ? (lapStyle = 'best-lap-time')
           : index === worstLap(laps) && laps.length > 1
@@ -40,7 +38,7 @@ function Laps({ laps, totals }) {
             lap={lap}
             totals={totals}
             lapStyle={lapStyle}
-            shadeStyle={shadeStyle}
+            shadeStyle={'lap'}
             index={index}
           />
         );

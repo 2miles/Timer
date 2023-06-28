@@ -5,8 +5,7 @@
   flex-direction: column;
   text-align: center;
   min-height: 100vh;
-  /* background-color: var(--app-bg); */
-  background-color: var(--sw-bg);
+  background-color: var(--app-bg);
   color: white;
   align-items: center;
 }
@@ -14,12 +13,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--sw-bg);
-  padding: 5px 10px;
+  background-color: #111111;
+  padding: 10px 10px;
   margin-top: 50px;
   border: solid;
-  border-color: rgb(200, 200, 30);
-  border-width: 1px;
+  border-color: var(--btn-reset);
+  border-width: 3px;
   border-radius: 5px;
   min-width: 500px;
 }
@@ -29,10 +28,12 @@
   flex-direction: column;
   font-family: 'Monaco';
   min-width: 230px;
+  padding: 5px;
   margin-top: 10px;
-  padding: 0px 0px;
-  background-color: var(--sw-bg);
-  color: rgb(200, 200, 30);
+  border-radius: 5px;
+  background-color: var(--btn-reset-pressed);
+  /* background-color: #111111; */
+  color: var(--text-yellow);
   border: none;
 }
 .stopwatch-display-title {
@@ -52,7 +53,7 @@
   margin-top: 0px;
   background-color: var(--display-bg);
   color: var(--display-fg);
-  border: solid 4px var(--display-border);
+  border: solid 4px var(--sw-bg);
 }
 
 .stopwatch-btn-area {
@@ -62,6 +63,8 @@
   background-color: var(--sw-bg);
   margin-bottom: 20px;
   margin-top: 20px;
+  padding: 3px;
+  border-radius: 5px;
 }
 
 .btn {
@@ -117,22 +120,22 @@
   flex-direction: column;
   font-family: 'Menlo';
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .laps-header {
-  font-size: 0.9rem;
   padding-left: 15px;
-  padding-right: 35px;
+  padding-right: 15px;
   margin-bottom: 10px;
   font-family: 'Monaco';
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: rgb(200, 200, 30);
+  color: var(--text-yellow);
 }
 
 .lap {
+  font-size: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -142,7 +145,8 @@
   padding-right: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
-  min-width: 380px;
+  min-width: 460px;
+  color: var(--btn-text);
 }
 .lap-title {
   display: flex;
@@ -157,14 +161,14 @@
 .best-lap-time {
   border: solid 1px;
   border-radius: 5px;
-  border-color: var(--btn-start);
+  border-color: var(--btn-start-hover);
   padding-left: 5px;
   padding-right: 5px;
 }
 .worst-lap-time {
   border: solid 1px;
   border-radius: 5px;
-  border-color: var(--btn-stop);
+  border-color: var(--btn-stop-hover);
   padding-left: 5px;
   padding-right: 5px;
 }

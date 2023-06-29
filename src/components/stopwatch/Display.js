@@ -1,5 +1,5 @@
-import Time from './Time';
-import '../App.css';
+import Time from '../Time';
+import '../../App.css';
 
 function Display({ time, title }) {
   return (

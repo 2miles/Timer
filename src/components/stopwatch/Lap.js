@@ -1,13 +1,13 @@
-import '../App.css';
-import Time from './Time';
+import '../../App.css';
+import Time from '../Time';
 
-function Lap({ lap, totals, lapStyle, shadeStyle, index }) {
+function Lap({ lap, totals, lapTimeStyle, lapShadeStyle, index }) {
   return (
-    <div className={shadeStyle}>
+    <div className={lapShadeStyle}>
       <div className="lap-title">
         <span>{`${totals.length - index}`}</span>
       </div>
-      <div className={lapStyle}>
+      <div className={lapTimeStyle}>
         <Time time={lap} />
       </div>
       <div>

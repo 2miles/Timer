@@ -12,10 +12,10 @@ function Stopwatch() {
 
   const handleLap = () => {
     setLaps((prevList) => {
-      return [...prevList, time - lastTime];
+      return [time - lastTime, ...prevList];
     });
     setTotals((prevList) => {
-      return [...prevList, time];
+      return [time, ...prevList];
     });
     setLastTime(time);
   };

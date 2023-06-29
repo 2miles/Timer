@@ -20,7 +20,7 @@ function Laps({ laps, totals }) {
       {laps.length === 0 && (
         <Lap
           lap={[0]}
-          totals={[0]}
+          totals={[]}
           lapStyle={''}
           shadeStyle={'lap lap-placeholder'}
           index={0}

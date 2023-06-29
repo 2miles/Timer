@@ -5,13 +5,13 @@ function Lap({ lap, totals, lapStyle, shadeStyle, index }) {
   return (
     <div className={shadeStyle}>
       <div className="lap-title">
-        <span>{`${index + 1}`}</span>
+        <span>{`${totals.length - index}`}</span>
       </div>
       <div className={lapStyle}>
         <Time time={lap} />
       </div>
       <div>
-        <Time time={totals[index]} />
+        {totals.length > 0 ? <Time time={totals[index]} /> : <Time time={0} />}
       </div>
     </div>
   );

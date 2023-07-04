@@ -6,14 +6,16 @@ import {
   displayHours,
 } from '../utils';
 
-function Time({ time }) {
+function Time({ time, showMils = true }) {
   return (
     <>
       <span>{displayHours(time)}</span>:<span>{displayMinutes(time)}</span>:
       <span>{displaySeconds(time)}</span>
-      <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
-        .{displayMillis(time)}
-      </span>
+      {showMils && (
+        <span style={{ fontSize: '.8em', alignSelf: 'flex-end' }}>
+          .{displayMillis(time)}
+        </span>
+      )}
     </>
   );
 }

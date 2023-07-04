@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-// import '../../App.css';
-// import Laps from './Laps';
-// import Display from './Display';
 import Time from '../Time';
+import * as consts from '../../constants';
 
 function Timer() {
-  const [initialTime, setInitialTime] = useState(100 * 60);
+  const [initialTime, setInitialTime] = useState(consts.MINUTE);
   const [time, setTime] = useState(initialTime); // Time elapsed in milliseconds
   const [isOn, setIsOn] = useState(false); // On/off flag
 
@@ -16,7 +14,6 @@ function Timer() {
 
   const handleStop = () => {
     setIsOn(false);
-    // handleLap();
   };
 
   const handleStart = () => {
@@ -57,15 +54,21 @@ function Timer() {
         <button
           className="btn btn-adjust"
           onClick={() => {
-            handleAdd(100 * 60 * 60);
+            handleAdd(consts.HOUR);
           }}
         >
           +
         </button>
-        <button className="btn btn-adjust" onClick={() => handleAdd(100 * 60)}>
+        <button
+          className="btn btn-adjust"
+          onClick={() => handleAdd(consts.MINUTE)}
+        >
           +
         </button>
-        <button className="btn btn-adjust" onClick={() => handleAdd(100)}>
+        <button
+          className="btn btn-adjust"
+          onClick={() => handleAdd(consts.SECOND)}
+        >
           +
         </button>
       </div>
@@ -78,15 +81,21 @@ function Timer() {
         <button
           className="btn btn-adjust"
           onClick={() => {
-            handleSub(100 * 60 * 60);
+            handleSub(consts.HOUR);
           }}
         >
           -
         </button>
-        <button className="btn btn-adjust" onClick={() => handleSub(100 * 60)}>
+        <button
+          className="btn btn-adjust"
+          onClick={() => handleSub(consts.MINUTE)}
+        >
           -
         </button>
-        <button className="btn btn-adjust" onClick={() => handleSub(100)}>
+        <button
+          className="btn btn-adjust"
+          onClick={() => handleSub(consts.SECOND)}
+        >
           -
         </button>
       </div>
